@@ -11,7 +11,7 @@ public class PackRLE {
         if (type) {
             packing(inputString, newEncrypt, digitsTable);
         } else {
-            // todo
+            unpacking(inputString, newEncrypt, digitsTable);
         }
 
         return newEncrypt.toString();
@@ -55,6 +55,30 @@ public class PackRLE {
 
     }
 
+    private void unpacking(@NotNull String inputString, StringBuilder newEncrypt, Map<Integer, Character> digitsTable) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new CharArrayReader(inputString.toCharArray()))) {
+            boolean counter = false;
+            int counterRepetitions = 0;
+            int newChar;
+            while ((newChar = reader.read()) != -1) {
+                if (newChar > 32) {
+                    if (counter) {
+                        while (counterRepetitions != 0) {
+                            newEncrypt.append((char) newChar);
+                            counterRepetitions--;
+                        }
+                        counter = false;
+                    } else {
+                        counterRepetitions = DigitsTable.getValue(digitsTable, (char) newChar) + 1;
+                        counter = true;
+                    }
+                } else {
+                    newEncrypt.append((char) newChar);
+                    counter = false;
+                }
 
+            }
+        }
+    }
 
 }
