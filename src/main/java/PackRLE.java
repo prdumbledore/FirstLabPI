@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class PackRLE {
 
-    public String newEncrypt(boolean type, String inputString) throws IOException {
+    public String newEncrypt(boolean type, @NotNull String inputString) throws IOException {
         Map<Integer, Character> digitsTable = DigitsTable.digitsTable;
         StringBuilder newEncrypt = new StringBuilder();
         if (type) {
