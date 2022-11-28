@@ -30,7 +30,7 @@ fun Application.configureRouting() {
             val encryptText = call.parameters[TEXT]
             when (operationType) {
                 "p", "u" -> {
-                    call.respondText(packCaesar.newEncrypt(true, encryptText, shiftKey!!.toInt()))
+                    call.respondText(packCaesar.newEncrypt(operationType == "p", encryptText, shiftKey!!.toInt()))
                 }
             }
         }
