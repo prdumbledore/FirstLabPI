@@ -1,17 +1,26 @@
 package com.eriksargsyan.plugins
 
-import io.ktor.server.routing.*
+import PackRLE
 import io.ktor.server.application.*
 import io.ktor.server.response.*
+import io.ktor.server.routing.*
 
-const val ENCRYPT = "PackRLE"
+const val OPERATION = "operation"
+const val ENCRYPT = "text"
+val packRLE = PackRLE()
 
 fun Application.configureRouting() {
 
     routing {
         get("/encrypt") {
-            val encrypt = call.parameters[ENCRYPT]
-            call.respondText("Hello World!")
+            val operationType = call.parameters[OPERATION]
+            val encryptText = call.parameters[ENCRYPT]
+            when (operationType) {
+                "p", "u" -> {
+                    call.respondText(packRLE.newEncrypt(true, encryptText))
+                }
+            }
         }
     }
 }
+
