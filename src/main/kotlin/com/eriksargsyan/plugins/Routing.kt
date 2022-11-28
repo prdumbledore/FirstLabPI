@@ -17,7 +17,7 @@ fun Application.configureRouting() {
             val encryptText = call.parameters[ENCRYPT]
             when (operationType) {
                 "p", "u" -> {
-                    call.respondText(packRLE.newEncrypt(true, encryptText))
+                    call.respondText(packRLE.newEncrypt(operationType == "p", encryptText))
                 }
             }
         }
