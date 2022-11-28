@@ -34,13 +34,13 @@ val CAESAR_STEP_ERROR = """
                         STEP ERROR
                         Please, use  parameter "step={YOUR STEP}"
                         
-                        Example: http://127.0.0.1:8080/rle?operation=p&step=5&text=pppppp
+                        Example: http://127.0.0.1:8080/caesar?operation=p&step=5&text=pppppp
                     """.trimIndent()
 val CAESAR_INPUT_TEXT_ERROR = """
                         INPUT TEXT ERROR
                         Please, use  parameter "text={YOUR TEXT}"
                         
-                        Example: http://127.0.0.1:8080/rle?operation=p&step=5&text=pppppp
+                        Example: http://127.0.0.1:8080/caesar?operation=p&step=5&text=pppppp
                     """.trimIndent()
 
 
