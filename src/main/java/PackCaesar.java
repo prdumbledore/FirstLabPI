@@ -6,8 +6,7 @@ public class PackCaesar {
         if (type) {
             return packing(inputString, shiftKey);
         } else {
-            //todo
-            return null;
+            return unpacking(inputString, shiftKey);
         }
     }
 
@@ -33,6 +32,37 @@ public class PackCaesar {
 
         // return encrypted string
         return encryptStr.toString();
+    }
+
+    public static String unpacking(String inputStr, int shiftKey)
+    {
+        // convert inputStr into lower case
+        inputStr = inputStr.toLowerCase();
+
+        // decryptStr to store decrypted data
+        StringBuilder decryptStr = new StringBuilder();
+
+        // use for loop for traversing each character of the input string
+        for (int i = 0; i < inputStr.length(); i++)
+        {
+
+            // get position of each character of inputStr in ALPHABET
+            int pos = ALPHABET.indexOf(inputStr.charAt(i));
+
+            // get decrypted char for each char of inputStr
+            int decryptPos = (pos - shiftKey) % 26;
+
+            // if decryptPos is negative
+            if (decryptPos < 0){
+                decryptPos = ALPHABET.length() + decryptPos;
+            }
+            char decryptChar = ALPHABET.charAt(decryptPos);
+
+            // add decrypted char to decrypted string
+            decryptStr.append(decryptChar);
+        }
+        // return decrypted string
+        return decryptStr.toString();
     }
 
 }
