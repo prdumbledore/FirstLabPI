@@ -1,5 +1,11 @@
 # RLE and Caesar Encryption
 
+Main:
+[![Tests](https://github.com/prdumbledore/FirstLabPI/actions/workflows/gradle-tests.yml/badge.svg?branch=main)](https://github.com/prdumbledore/FirstLabPI/actions/workflows/gradle-tests.yml)
+Develop:
+[![Tests](https://github.com/prdumbledore/FirstLabPI/actions/workflows/gradle-tests.yml/badge.svg?branch=develop)](https://github.com/prdumbledore/FirstLabPI/actions/workflows/gradle-tests.yml)
+
+
 App for packing and unpacking by RLE or Caesar
 
 ## How to use
