@@ -1,5 +1,11 @@
 # RLE and Caesar Encryption
 
+(Main
+[![Tests](https://github.com/prdumbledore/FirstLabPI/actions/workflows/gradle-tests.yml/badge.svg?branch=main)](https://github.com/prdumbledore/FirstLabPI/actions/workflows/gradle-tests.yml) )
+(Develop
+[![Tests](https://github.com/prdumbledore/FirstLabPI/actions/workflows/gradle-tests.yml/badge.svg?branch=develop)](https://github.com/prdumbledore/FirstLabPI/actions/workflows/gradle-tests.yml) )
+Converter that can convert miles to km, km to meters and vice versa.
+
 App for packing and unpacking by RLE or Caesar
 
 ## How to use
@@ -40,6 +46,5 @@ $ docker run -p 8080:8080 FirstLabPI
 
 [MIT License](./LICENSE)
 
-=======================
-RLE and Caesar Encryption
-=======================
+
+## ======= RLE and Caesar Encryption =======
